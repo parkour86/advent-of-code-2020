@@ -1,18 +1,11 @@
 with open('input.txt', 'r+') as file:
     input = file.read().split('\n')
-count = 1
-def modifyAll(bagObject,keyValue):
-    global count
 
+def modifyAll(bagObject,keyValue):
     for key in bagObject.keys():
         for index,bags in enumerate(bagObject[key]):
             if keyValue == bags:
-                print(count,key,bagObject[key])
-                #print('debug:',bagObject[key][index])
-                #print(index,'key:',key,'value:',bags,'keyValue:',keyValue)
                 bagObject[key][index] = "shiny gold"
-                count += 1
-    print('')
 
 # Clean up the input file
 bagObject = {}
